@@ -1,4 +1,4 @@
-Normal comiplation:
+Normal compilation:
 
 ```terminal
 mkdir build

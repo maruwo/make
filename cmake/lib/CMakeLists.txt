@@ -1,6 +1,9 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(cmake VERSION 0.1.0)
-
-add_library(mylib SHARED 
-    mylib.c
-)
+add_library(mylib SHARED
+  mylib.c
+  )
+target_include_directories(mylib
+  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+  )
+target_compile_options(mylib
+  PUBLIC -Wall
+  )

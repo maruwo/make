@@ -1,15 +1,11 @@
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.2.0)
 project(cmake VERSION 0.1.0)
 
-#デバッグ用
-#set(CMAKE_VERBOSE_MAKEFILE TRUE)
-
-set(CMAKE_C_FLAGS "-g -O0 -Wall -MMD -MP")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 add_subdirectory(lib)
-
-set(LIB_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
-foreach(tag IN ITEMS app1 app2 app3)
-    set(TARGET ${tag})
-    add_subdirectory(${tag})
-endforeach()
+add_subdirectory(app1)
+add_subdirectory(app2)
+add_subdirectory(app3)
